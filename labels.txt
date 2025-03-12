@@ -5,3 +5,30 @@
 4 Eastern Lowland Gorilla
 5 Pseudoryx nghetinhensis saola
 6 Vaquita
+7 Chimpanzee
+8 Sea Lions
+9 African Wild Dog
+10 Whale Shark
+11 Humphead Wrasse
+12 Monarch Butterfly
+13 Red Panda
+14 Sea Turtle
+15 Black-footed Ferret
+16 Olive Ridley Turtle
+17 Hippopotamus
+18 Dugong
+19 Greater One-Horned Rhino
+20 Lion
+21 Black Spider Monkey
+22 Jaguar
+23 Plains Bison
+24 Greater Sage-Grouse
+25 Yellowfin Tuna
+26 Beluga
+27 Mountain Plover
+28 Arctic Fox
+29 Arctic Wolf
+30 Swift Fox
+31 Macaw
+32 Tree Kangaroo
+33 Beaver

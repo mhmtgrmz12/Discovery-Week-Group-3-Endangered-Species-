@@ -4,8 +4,8 @@ import numpy as np
 from PIL import Image
 from main import predict_image
 
-st.title("Nesli Tükenmekte Olan Hayvan Tanıma Sistemi")
-st.write("Kameranızı açarak bir hayvanı tanımlayın.")
+st.title("Endangered Animal Identification System")
+st.write("Identify an animal by turning on your camera.")
 
 # Kamera açma butonu
 run_camera = st.checkbox("Start Camera")
