@@ -1,10 +1,15 @@
 [[pages]]
-path = "./myapp.py"
+path = "./processor.py"
 name = "Home"
 icon = "🏠"
 
 [[pages]]
-path = "main.py"
-name = "Page 2"
+path = "./myapp.py"
+name = "Home2"
+icon = "🏠"
+
+[[pages]]
+path = "./logs.py"
+name = "Logs"
 icon = ":books:"
 url_path = "my_books" # You can override the default url path for a page
