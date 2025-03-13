@@ -1,344 +1,86 @@
 [
     {
-        "timestamp": "2025-03-13 14:54:09",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9765129089355469
+        "timestamp": "2025-03-13 16:47:50",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9870997667312622
     },
     {
-        "timestamp": "2025-03-13 14:54:09",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9222650527954102
+        "timestamp": "2025-03-13 16:50:37",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9986340999603271
     },
     {
-        "timestamp": "2025-03-13 14:54:10",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9176599979400635
+        "timestamp": "2025-03-13 16:52:55",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9742673635482788
     },
     {
-        "timestamp": "2025-03-13 14:54:10",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9569746255874634
+        "timestamp": "2025-03-13 16:55:46",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9774270057678223
     },
     {
-        "timestamp": "2025-03-13 14:54:10",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.91883385181427
+        "timestamp": "2025-03-13 16:58:55",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9994290471076965
     },
     {
-        "timestamp": "2025-03-13 14:54:11",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9229413866996765
+        "timestamp": "2025-03-13 16:59:07",
+        "class_name": "Vaquita",
+        "category": "EN(G1)",
+        "confidence_score": 0.9201302528381348
     },
     {
-        "timestamp": "2025-03-13 14:54:13",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9007295370101929
+        "timestamp": "2025-03-13 17:29:15",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9998792409896851
     },
     {
-        "timestamp": "2025-03-13 14:54:13",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.959725022315979
+        "timestamp": "2025-03-13 17:33:06",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9983794689178467
     },
     {
-        "timestamp": "2025-03-13 14:54:15",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9423477053642273
+        "timestamp": "2025-03-13 17:37:51",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9237629771232605
     },
     {
-        "timestamp": "2025-03-13 14:54:16",
-        "class_name": "6 Vaquita",
-        "category": "Hayvan",
-        "confidence_score": 0.9061169624328613
+        "timestamp": "2025-03-13 17:42:00",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9994739890098572
     },
     {
-        "timestamp": "2025-03-13 14:54:16",
-        "class_name": "6 Vaquita",
-        "category": "Hayvan",
-        "confidence_score": 0.9503394961357117
+        "timestamp": "2025-03-13 17:49:04",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9679134488105774
     },
     {
-        "timestamp": "2025-03-13 14:56:42",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9817989468574524
+        "timestamp": "2025-03-13 17:50:16",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.9237380027770996
     },
     {
-        "timestamp": "2025-03-13 14:56:42",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9837443232536316
+        "timestamp": "2025-03-13 17:51:19",
+        "class_name": "Lion",
+        "category": "VU(G3)",
+        "confidence_score": 0.970156192779541
     },
     {
-        "timestamp": "2025-03-13 14:56:43",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9480608105659485
-    },
-    {
-        "timestamp": "2025-03-13 14:56:43",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.905967116355896
-    },
-    {
-        "timestamp": "2025-03-13 14:56:43",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9251325130462646
-    },
-    {
-        "timestamp": "2025-03-13 14:56:44",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9195578694343567
-    },
-    {
-        "timestamp": "2025-03-13 14:56:44",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9483745098114014
-    },
-    {
-        "timestamp": "2025-03-13 14:56:44",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9098694920539856
-    },
-    {
-        "timestamp": "2025-03-13 14:56:44",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9291146397590637
-    },
-    {
-        "timestamp": "2025-03-13 14:56:45",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9795666337013245
-    },
-    {
-        "timestamp": "2025-03-13 14:56:45",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9666415452957153
-    },
-    {
-        "timestamp": "2025-03-13 14:56:45",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9696127772331238
-    },
-    {
-        "timestamp": "2025-03-13 14:56:45",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9804956316947937
-    },
-    {
-        "timestamp": "2025-03-13 14:56:45",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9679281115531921
-    },
-    {
-        "timestamp": "2025-03-13 14:56:46",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9007245302200317
-    },
-    {
-        "timestamp": "2025-03-13 14:56:46",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9325451254844666
-    },
-    {
-        "timestamp": "2025-03-13 14:56:46",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9671351313591003
-    },
-    {
-        "timestamp": "2025-03-13 14:56:46",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9673976898193359
-    },
-    {
-        "timestamp": "2025-03-13 14:56:47",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9873418211936951
-    },
-    {
-        "timestamp": "2025-03-13 14:56:47",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9870860576629639
-    },
-    {
-        "timestamp": "2025-03-13 15:00:18",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9016636610031128
-    },
-    {
-        "timestamp": "2025-03-13 15:00:18",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9530211091041565
-    },
-    {
-        "timestamp": "2025-03-13 15:00:18",
-        "class_name": "5 Pseudoryx nghetinhensis saola",
-        "category": "Hayvan",
-        "confidence_score": 0.9434400200843811
-    },
-    {
-        "timestamp": "2025-03-13 15:00:57",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9701685905456543
-    },
-    {
-        "timestamp": "2025-03-13 15:00:57",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9122878909111023
-    },
-    {
-        "timestamp": "2025-03-13 15:00:57",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9853789806365967
-    },
-    {
-        "timestamp": "2025-03-13 15:00:58",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9583302736282349
-    },
-    {
-        "timestamp": "2025-03-13 15:00:58",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9031129479408264
-    },
-    {
-        "timestamp": "2025-03-13 15:00:58",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9806154370307922
-    },
-    {
-        "timestamp": "2025-03-13 15:00:58",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9830189347267151
-    },
-    {
-        "timestamp": "2025-03-13 15:00:58",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9885733723640442
-    },
-    {
-        "timestamp": "2025-03-13 15:00:59",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9685086607933044
-    },
-    {
-        "timestamp": "2025-03-13 15:00:59",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9507105350494385
-    },
-    {
-        "timestamp": "2025-03-13 15:00:59",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9047543406486511
-    },
-    {
-        "timestamp": "2025-03-13 15:01:52",
-        "class_name": "6 Vaquita",
-        "category": "Hayvan",
-        "confidence_score": 0.9043511748313904
-    },
-    {
-        "timestamp": "2025-03-13 15:06:04",
-        "class_name": "18 Dugong",
-        "category": "Hayvan",
-        "confidence_score": 0.9325354695320129
-    },
-    {
-        "timestamp": "2025-03-13 15:06:14",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9915188550949097
-    },
-    {
-        "timestamp": "2025-03-13 15:06:45",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9306304454803467
-    },
-    {
-        "timestamp": "2025-03-13 15:17:43",
-        "class_name": "6 Vaquita",
-        "category": "Hayvan",
-        "confidence_score": 0.9067122936248779
-    },
-    {
-        "timestamp": "2025-03-13 15:17:50",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9871156811714172
-    },
-    {
-        "timestamp": "2025-03-13 15:21:59",
-        "class_name": "6 Vaquita",
-        "category": "Hayvan",
-        "confidence_score": 0.9292214512825012
-    },
-    {
-        "timestamp": "2025-03-13 15:22:04",
-        "class_name": "23 Plains Bison",
-        "category": "Hayvan",
-        "confidence_score": 0.9782402515411377
-    },
-    {
-        "timestamp": "2025-03-13 15:22:38",
-        "class_name": "21 Black Spider Monkey",
-        "category": "Hayvan",
-        "confidence_score": 0.9085278511047363
-    },
-    {
-        "timestamp": "2025-03-13 15:22:39",
-        "class_name": "4 Eastern Lowland Gorilla",
-        "category": "Hayvan",
-        "confidence_score": 0.9426982402801514
-    },
-    {
-        "timestamp": "2025-03-13 15:22:45",
-        "class_name": "27 Arctic Fox",
-        "category": "Hayvan",
-        "confidence_score": 0.9297271966934204
-    },
-    {
-        "timestamp": "2025-03-13 15:22:55",
-        "class_name": "22 Jaguar",
-        "category": "Hayvan",
-        "confidence_score": 0.962039589881897
+        "timestamp": "2025-03-13 17:51:51",
+        "class_name": "Hippopotamus",
+        "category": "VU(G3)",
+        "confidence_score": 0.9644021391868591
     }
 ]
