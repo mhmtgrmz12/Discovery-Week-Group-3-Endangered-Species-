@@ -234,8 +234,10 @@ with col2:
                 class_name, category, confidence_score = predict_image(img_pil)
 
                 # Only process and display if not Environment/Human and confidence > 90%
-                if not (class_name.endswith("Human") or class_name.endswith(
-                        "Environment")) and confidence_score >= 0.90:
+                if (class_name is not None and
+                        confidence_score is not None and
+                        not (class_name.endswith("Human") or class_name.endswith("Environment")) and
+                        confidence_score >= 0.95):
 
                     # Get species details
                     species_details = get_species_details(class_name)

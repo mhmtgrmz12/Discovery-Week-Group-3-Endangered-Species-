@@ -340,5 +340,23 @@
         "class_name": "22 Jaguar",
         "category": "Hayvan",
         "confidence_score": 0.962039589881897
+    },
+    {
+        "timestamp": "2025-03-13 16:24:54",
+        "class_name": "Arctic Fox",
+        "category": "LC(G5)",
+        "confidence_score": 0.94144207239151
+    },
+    {
+        "timestamp": "2025-03-13 16:24:59",
+        "class_name": "Vaquita",
+        "category": "EN(G1)",
+        "confidence_score": 0.9387007355690002
+    },
+    {
+        "timestamp": "2025-03-13 16:25:11",
+        "class_name": "Jaguar",
+        "category": "NT(G4)",
+        "confidence_score": 0.9058457612991333
     }
 ]
