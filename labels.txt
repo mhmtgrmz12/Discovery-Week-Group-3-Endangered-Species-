@@ -24,11 +24,12 @@
 23 Plains Bison
 24 Greater Sage-Grouse
 25 Yellowfin Tuna
-26 Beluga
-27 Mountain Plover
-28 Arctic Fox
-29 Arctic Wolf
-30 Swift Fox
-31 Macaw
-32 Tree Kangaroo
-33 Beaver
+26 Mountain Plover
+27 Arctic Fox
+28 Arctic Wolf
+29 Swift Fox
+30 Macaw
+31 Tree Kangaroo
+32 Beaver
+33 Human
+34 Environment
