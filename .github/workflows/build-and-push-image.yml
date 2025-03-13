@@ -1,0 +1,37 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+    tags:
+      - 'v*'  # Trigger on tags starting with 'v'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Google Cloud authentication
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+      # Configure Docker to use the Google Cloud Artifact Registry
+      - name: Set up Docker
+        run: gcloud auth configure-docker europe-west1-docker.pkg.dev
+
+      # Build the Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t europe-west1-docker.pkg.dev/bold-apricot-453614-f7/cloud-run-source-deploy/discovery-week-group-3-endangered-species/endangered-species:${{ github.sha }} .
+
+      # Push the Docker image to the Artifact Registry
+      - name: Push Docker image
+        run: |
+          docker push europe-west1-docker.pkg.dev/bold-apricot-453614-f7/cloud-run-source-deploy/discovery-week-group-3-endangered-species/endangered-species:${{ github.sha }}
