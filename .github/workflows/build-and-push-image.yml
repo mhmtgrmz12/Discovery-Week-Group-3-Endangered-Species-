@@ -29,9 +29,9 @@ jobs:
       # Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t europe-west1-docker.pkg.dev/bold-apricot-453614-f7/cloud-run-source-deploy/discovery-week-group-3-endangered-species/endangered-species:${{ github.sha }} .
+          docker build -t europe-west1-docker.pkg.dev/bold-apricot-453614-f7/cloud-run-source-deploy/discovery-week-group-3-endangered-species/endangered-species:fd47282b78295785113c398120710e6bf49520cd .
 
       # Push the Docker image to the Artifact Registry
       - name: Push Docker image
         run: |
-          docker push europe-west1-docker.pkg.dev/bold-apricot-453614-f7/cloud-run-source-deploy/discovery-week-group-3-endangered-species/endangered-species:${{ github.sha }}
+          docker push europe-west1-docker.pkg.dev/bold-apricot-453614-f7/cloud-run-source-deploy/discovery-week-group-3-endangered-species/endangered-species:fd47282b78295785113c398120710e6bf49520cd
