@@ -5,54 +5,87 @@ from PIL import Image
 from main import predict_image
 import time
 
-st.title("Nesli Tükenmekte Olan Hayvan Tanıma Sistemi")
-st.write("Kameranız sürekli açık olacak. Sadece hayvan algılandığında ve doğruluk %90 üzerindeyse çıktı verilecek.")
+# Title section (top box)
+with st.container():
+    st.title("Endangered Animal Recognition System")
+    st.write(
+        "Your camera will be continuously on. Output will only be provided when an animal is detected and accuracy is above 90%.")
 
-# Kamera açma butonu
-run_camera = st.checkbox("Kamerayı Başlat")
+# Create two columns for the bottom section
+col1, col2 = st.columns([1, 2])  # 1:2 ratio for width
 
-if run_camera:
-    cap = cv2.VideoCapture(0)  # Kamerayı başlat
-    stframe = st.empty()
+# Left smaller box (column 1)
+with col1:
+    st.subheader("Detection Results")
+    # This is where you'll display your results
+    results_placeholder = st.empty()
 
-    if not cap.isOpened():  # Kamera açılamadıysa hata ver
-        st.error("Kamera açılamadı! Başka bir program kullanıyor olabilir.")
-        run_camera = False  # Döngüyü bitir
+# Right larger box (column 2)
+with col2:
+    st.subheader("Camera Feed")
+    # This is where your camera feed will go
+    camera_placeholder = st.empty()
 
-    while run_camera:
-        ret, frame = cap.read()
+    # Camera start button
+    run_camera = st.checkbox("Start Camera")
 
-        # Eğer kameradan görüntü alınamıyorsa, döngüyü bir süre beklet ve tekrar dene
-        if not ret:
-            st.warning("Kameradan görüntü alınamıyor! Bağlantıyı kontrol edin.")
-            time.sleep(0.5)  # Bekleyerek CPU yükünü azalt
-            continue  # Döngüyü devam ettir
+    if run_camera:
+        cap = cv2.VideoCapture(0)  # Start the camera
 
-        # Görüntüyü renk formatına çevir
-        image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        img_pil = Image.fromarray(image)
+        # Optimize camera settings to reduce delay
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)  # Lower resolution
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+        cap.set(cv2.CAP_PROP_FPS, 30)  # Increase FPS
+        cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)  # Reduce buffer size
 
-        class_name, category, confidence_score = predict_image(img_pil)
+        if not cap.isOpened():  # Show error if camera couldn't be opened
+            st.error("Camera couldn't be opened! Another program might be using it.")
+            run_camera = False  # End the loop
 
-        # **Eğer environment algılanırsa hiçbir şey yazdırmayacağız**
-        if class_name == "Environment":
-            continue  # Döngüyü devam ettir, ekrana yazma
+        last_process_time = time.time()
+        display_frame = None
 
-        # **Eğer hayvan algılanırsa ama doğruluk %90'ın altındaysa hiçbir şey göstermeyeceğiz**
-        if confidence_score < 0.90:
-            continue
+        while run_camera:
+            ret, frame = cap.read()
 
-        label_text = f"{class_name} - {confidence_score * 100:.2f}%"
+            # If image can't be captured from camera, wait for a while and try again
+            if not ret:
+                st.warning("Can't get image from camera! Check the connection.")
+                time.sleep(0.1)  # Reduced wait time
+                continue  # Continue the loop
 
-        # Eğer yeni bir tahmin geldiyse, sadece o zaman ekrana yaz
-        if label_text != st.session_state.get("last_label", ""):
-            st.session_state["last_label"] = label_text
-            st.write(label_text)
+            # Process frames at a lower rate to reduce CPU load (every 200ms)
+            current_time = time.time()
+            if current_time - last_process_time > 0.2:
+                # Convert image to color format
+                image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                img_pil = Image.fromarray(image)
 
-        cv2.putText(frame, label_text, (10, 50),
-                    cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+                class_name, category, confidence_score = predict_image(img_pil)
 
-        stframe.image(frame, channels="BGR")
+                # Only process and display if not Environment/Human and confidence > 90%
+                if not (class_name.endswith("Human") or class_name.endswith(
+                        "Environment")) and confidence_score >= 0.90:
+                    label_text = f"{class_name} - {confidence_score * 100:.2f}%"
 
-    cap.release()  # Kamerayı serbest bırak
-    cv2.destroyAllWindows()
+                    # Only write to screen if a new prediction has come
+                    if label_text != st.session_state.get("last_label", ""):
+                        st.session_state["last_label"] = label_text
+                        results_placeholder.write(label_text)
+
+                    # Add label to the frame
+                    cv2.putText(frame, label_text, (10, 50),
+                                cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+
+                display_frame = frame
+                last_process_time = current_time
+
+            # Always display the most recent processed frame
+            if display_frame is not None:
+                camera_placeholder.image(display_frame, channels="BGR")
+
+            # Add a small sleep to prevent hogging the CPU
+            time.sleep(0.01)
+
+        cap.release()  # Release the camera
+        cv2.destroyAllWindows()
