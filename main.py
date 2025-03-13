@@ -1,76 +1,27 @@
-from keras.models import load_model
-from PIL import Image, ImageOps
-import numpy as np
-import re  # Sayıları temizlemek için regex kullanacağız
+import streamlit as st
+from st_pages import add_page_title, get_nav_from_toml
 
-# Modeli yükle
-model = load_model("keras_model.h5", compile=False)
+st.set_page_config(
+    page_title="Ex-stream-ly Cool App",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    }
+)
 
+# If you want to use the no-sections version, this
+# defaults to looking in .streamlit/pages.toml, so you can
+# just call `get_nav_from_toml()`
+nav = get_nav_from_toml(".streamlit/pages.toml")
 
-# **labels.txt içinden boşlukları ve başındaki sayıları temizle**
-def clean_label(line):
-    """Boş satırları ve başındaki sayıları temizleyen fonksiyon"""
-    line = line.strip()
-    line = re.sub(r'^\d+\s+', '', line)  # Başındaki sayıları sil
-    return line
+# st.logo("logo.png")
 
+pg = st.navigation(nav)
 
-with open("labels.txt", "r", encoding="utf-8") as f:
-    class_names = [clean_label(line) for line in f.readlines() if line.strip()]  # Boş satırları temizle
+add_page_title(pg)
 
-# Nesli tükenmekte olan hayvanları sınıflarına göre gruplama
-animal_classes = {
-    "EN(G1)": ["Vaquita", "Pseudoryx nghetinhensis saola", "Eastern Lowland Gorilla",
-               "Bornean Orangutan", "Black Rhino", "Amur Leopard", "African forest elephant"],
-    "EN(G2)": ["Black-footed Ferret", "Sea Turtle", "Red Panda", "Monarch Butterfly",
-               "Humphead Wrasse", "Whale Shark", "African Wild Dog", "Sea Lions", "Chimpanzee"],
-    "VU(G3)": ["Black Spider Monkey", "Lion", "Greater One-Horned Rhino", "Dugong",
-               "Hippopotamus", "Olive Ridley Turtle"],
-    "NT(G4)": ["Mountain Plover", "Yellowfin Tuna", "Greater Sage-Grouse", "Plains Bison", "Jaguar"],
-    "LC(G5)": ["Beaver", "Tree Kangaroo", "Macaw", "Swift Fox", "Arctic Wolf", "Arctic Fox"]
-}
-
-
-def get_animal_class(animal_name):
-    """Hayvanın nesli tükenme sınıfını döndürür."""
-    for category, animals in animal_classes.items():
-        if animal_name in animals:
-            return category
-    return "Unknown"
-
-
-def predict_image(image):
-    """Verilen görüntü için model tahmini döndürür."""
-    size = (224, 224)
-    image = ImageOps.fit(image, size, Image.Resampling.LANCZOS)
-
-    image_array = np.asarray(image)
-    normalized_image_array = (image_array.astype(np.float32) / 127.5) - 1
-
-    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-    data[0] = normalized_image_array
-
-    prediction = model.predict(data)
-    probabilities = prediction[0] / np.sum(prediction[0])
-
-    index = np.argmax(probabilities)
-    confidence_score = probabilities[index]
-
-    # **labels.txt içinden doğru etiketi al**
-    if index < len(class_names):
-        class_name = class_names[index].strip()
-    else:
-        class_name = "Unknown"
-
-    # **Eğer Environment veya Human algılandıysa, kesin olarak `None` döndür!**
-    if class_name in ["Environment", "Human"]:
-        return None, None, None
-
-    # Eğer hayvan algılanırsa ama doğruluk %90'ın altındaysa hiçbir şey döndürme
-    if confidence_score < 0.90:
-        return None, None, None
-
-    # Hayvanın nesli tükenme sınıfını al
-    animal_class = get_animal_class(class_name)
-
-    return class_name, animal_class, confidence_score
+pg.run()
