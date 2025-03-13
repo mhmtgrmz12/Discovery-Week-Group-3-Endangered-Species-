@@ -174,12 +174,13 @@ with st.container():
     st.write(
         "Your camera will be continuously on. Output will only be provided when an animal is detected and accuracy is above 90%.")
 
+st.subheader("Detection Results")
+st.subheader("Camera Feed")
 # Create two columns for the bottom section
 col1, col2 = st.columns([1, 2])  # 1:2 ratio for width
 
 # Left smaller box (column 1)
 with col1:
-    st.subheader("Detection Results")
 
     # This is where you'll display your results
     results_placeholder = st.empty()
@@ -190,14 +191,17 @@ with col1:
     # Add a cooldown indicator
     cooldown_placeholder = st.empty()
 
+
 # Right larger box (column 2)
 with col2:
-    st.subheader("Camera Feed")
+
+
     # This is where your camera feed will go
     camera_placeholder = st.empty()
 
     # Camera start button
     run_camera = st.checkbox("Start Camera")
+
 
     if run_camera:
         cap = cv2.VideoCapture(0)  # Start the camera
@@ -226,7 +230,7 @@ with col2:
 
             # Process frames at a lower rate to reduce CPU load (every 200ms)
             current_time = time.time()
-            if current_time - last_process_time > 0.2:
+            if current_time - last_process_time > 0.1:
                 # Convert image to color format
                 image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 img_pil = Image.fromarray(image)
@@ -234,10 +238,8 @@ with col2:
                 class_name, category, confidence_score = predict_image(img_pil)
 
                 # Only process and display if not Environment/Human and confidence > 90%
-                if (class_name is not None and
-                        confidence_score is not None and
-                        not (class_name.endswith("Human") or class_name.endswith("Environment")) and
-                        confidence_score >= 0.95):
+                if class_name and not (class_name.endswith("Human") or class_name.endswith("Environment")) and confidence_score >= 0.90:
+
 
                     # Get species details
                     species_details = get_species_details(class_name)
@@ -274,10 +276,7 @@ with col2:
                             label_text = f"**{class_name}**\n🟢 **Sınıfı:** {category}\n📊 **Güven Skoru:** {confidence_score * 100:.2f}%\n⏱️ **Zaman:** {timestamp}"
                             cooldown_placeholder.success("✅ New detection logged!")
                             log_status = f"✅ Logged at {timestamp}"
-                        else:
-                            # This case shouldn't normally happen due to our checks, but just in case
-                            label_text = f"**{class_name}**\n🟢 **Sınıfı:** {category}\n📊 **Güven Skoru:** {confidence_score * 100:.2f}%\n⚠️ **Not logged**"
-                            log_status = "⚠️ Not logged"
+
 
                     # Display the detection result
                     results_placeholder.markdown(label_text)
@@ -303,6 +302,10 @@ with col2:
                             <tr>
                                 <td><strong>Log Status:</strong></td>
                                 <td>{log_status}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Confidence Score:</strong></td>
+                                <td><span style='color:{status_color}'>{confidence_score * 100:.2f}%</span></td>
                             </tr>
                         </table>
                     </div>
