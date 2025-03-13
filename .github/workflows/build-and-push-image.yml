@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - snh-gcpbuild  # Trigger on pushes to the main branch
+      - snh-gcpbuild  # Trigger on pushes to the specified branch
     tags:
       - 'v*'  # Trigger on tags starting with 'v'
 
@@ -26,12 +26,14 @@ jobs:
       - name: Set up Docker
         run: gcloud auth configure-docker europe-west1-docker.pkg.dev
 
-      # Build the Docker image
-      - name: Build Docker image
-        run: |
-          docker build -t europe-west1-docker.pkg.dev/bold-apricot-453614-f7/cloud-run-source-deploy/discovery-week-group-3-endangered-species/endangered-species:fd47282b78295785113c398120710e6bf49520cd .
-
-      # Push the Docker image to the Artifact Registry
-      - name: Push Docker image
-        run: |
-          docker push europe-west1-docker.pkg.dev/bold-apricot-453614-f7/cloud-run-source-deploy/discovery-week-group-3-endangered-species/endangered-species:fd47282b78295785113c398120710e6bf49520cd
+      # Build and Push Docker image with caching
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .  # Path to the Docker build context
+          push: true  # Push the image after building
+          tags: |
+            europe-west1-docker.pkg.dev/bold-apricot-453614-f7/cloud-run-source-deploy/discovery-week-group-3-endangered-species/endangered-species:${{ github.sha }}
+            europe-west1-docker.pkg.dev/bold-apricot-453614-f7/cloud-run-source-deploy/discovery-week-group-3-endangered-species/endangered-species:latest
+          cache-from: type=gha  # Use GitHub Actions cache for Docker layers
+          cache-to: type=gha,mode=max  # Cache Docker layers for future builds
