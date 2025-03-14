@@ -82,5 +82,35 @@
         "class_name": "Hippopotamus",
         "category": "VU(G3)",
         "confidence_score": 0.9644021391868591
+    },
+    {
+        "timestamp": "2025-03-14 09:38:39",
+        "class_name": "Arctic Fox",
+        "category": "LC(G5)",
+        "confidence_score": 0.9388688206672668
+    },
+    {
+        "timestamp": "2025-03-14 09:38:50",
+        "class_name": "Jaguar",
+        "category": "NT(G4)",
+        "confidence_score": 0.9732196927070618
+    },
+    {
+        "timestamp": "2025-03-14 09:38:56",
+        "class_name": "Whale Shark",
+        "category": "EN(G2)",
+        "confidence_score": 0.9463378190994263
+    },
+    {
+        "timestamp": "2025-03-14 09:38:59",
+        "class_name": "Vaquita",
+        "category": "EN(G1)",
+        "confidence_score": 0.9187712669372559
+    },
+    {
+        "timestamp": "2025-03-14 10:18:55",
+        "class_name": "Jaguar",
+        "category": "NT(G4)",
+        "confidence_score": 0.9176864624023438
     }
 ]

@@ -172,7 +172,7 @@ def get_status_display(status):
 with st.container():
     st.title("Endangered Animal Recognition System")
     st.write(
-        "Your camera will be continuously on. Output will only be provided when an animal is detected and accuracy is above 90%.")
+        "Your camera will be continuously on. Output will only be provided when an animal is detected and accuracy is above 95%.")
 
 st.subheader("Detection Results")
 st.subheader("Camera Feed")
@@ -238,7 +238,7 @@ with col2:
                 class_name, category, confidence_score = predict_image(img_pil)
 
                 # Only process and display if not Environment/Human and confidence > 90%
-                if class_name and not (class_name.endswith("Human") or class_name.endswith("Environment")) and confidence_score >= 0.90:
+                if class_name and not (class_name.endswith("Human") or class_name.endswith("Environment")) and confidence_score >= 0.95:
 
 
                     # Get species details
